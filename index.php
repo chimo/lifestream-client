@@ -43,50 +43,15 @@ echo $html;
 ?>
 
 <script>
-  if ("WebSocket" in window ) {
-    var ws = new WebSocket( window.location.origin.replace( /https?/, "ws" ) + ":8090" ),
-        formatDate;
+( function() {
+    "use strict";
 
-    formatDate = function( date ) {
-        var d = new Date( date );
-
-        // Fallback to "now" if date is invalid
-        if ( isNaN( d.getTime() ) ) {
-            d = new Date();
-        }
-
-        return d.toISOString().slice( 0, -5 ).replace( "T", " " );
-    };
-
-    ws.onopen = function( event ) {
-      console.log( 'connection established' );
-    };
-
-    ws.onerror = function ( event ) {
-        console.log( 'error' );
-        console.log( event );
-    };
-
-    ws.onclose = function (event) {
-        console.log('closed');
-        console.log(event);
+    window.ls = {
+        "port": <?php $config['websockets']['port'] ?>
     }
-
-    ws.onmessage = function( event ) {
-        console.log(JSON.parse(event.data).published);
-      var item = document.createElement( 'li' ),
-          list = document.getElementById( 'list' ),
-          event = JSON.parse( event.data );
-
-      item.innerHTML = "<figure>" +
-                           "<figcaption>" + event.title + "</figcaption>" +
-                           "<blockquote cite='" + event.source + "'>" + event.content + "</blockquote>" +
-                           "<footer><a href='" + event.source + "'>" + formatDate( event.published ) + "</a></footer>" +
-                       "</figure>";
-      list.insertBefore( item, list.firstChild );
-    };
-  }
+}() );
 </script>
+<script src="js/websockets.js"></script>
 
 </body>
 </html>

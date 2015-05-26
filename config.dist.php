@@ -6,6 +6,9 @@ $config = array(
         "user" => "lifestream",
         "password" => "",
         "host" => "localhost"
+    ),
+
+    "websockets" => array(
+        "port" => 8090
     )
 );
-
