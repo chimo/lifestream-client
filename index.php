@@ -1,46 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ls</title>
-
-<style>
-
-.gnusocial {
-    background-image: url("images/gs-c.png");
-}
-
-.mediagoblin {
-    background-image: url("images/gmg-c.png");
-}
-
-.blog {
-    background-image: url("images/ch-c.png");
-}
-
-li {
-    background-repeat: no-repeat;
-    background-position: left 20px;
-    padding-left: 50px;
-}
-
-#list {
-    list-style-type: none;
-}
-
-#list li {
-    margin-bottom: 12px;
-}
-
-figure {
-    box-shadow: -8px 8px 10px 0px rgba(204,204,204,0.47);
-    padding: 10px;
-}
-
-figcaption {
-    font-weight: bold;
-}
-
-</style>
+    <title>lifestream</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
