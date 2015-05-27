@@ -47,7 +47,7 @@ echo $html;
     "use strict";
 
     window.ls = {
-        "port": <?php $config['websockets']['port'] ?>
+        "port": <?php echo $config['websockets']['port'] ?>
     }
 }() );
 </script>
